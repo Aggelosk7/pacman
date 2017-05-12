@@ -24,6 +24,8 @@
 	<h3 id="scoreTxt" align="center"></h3>
 
     <script type="text/javascript">
+	   
+	var score;
 
     var game = new Phaser.Game(448, 496, Phaser.AUTO);
 
@@ -230,6 +232,10 @@
         eatDot: function (pacman, dot) {
 
             dot.kill();
+		
+		score = score + 1;
+
+            document.getElementById("scoreTxt").innerHTML ="Score: " + score;
 
             if (this.dots.total === 0)
             {
